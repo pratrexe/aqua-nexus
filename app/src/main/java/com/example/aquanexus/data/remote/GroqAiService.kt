@@ -90,13 +90,15 @@ class GroqAiService(
     }
 
     private fun callGroqApi(systemPrompt: String, userPrompt: String): String {
-        val effectiveKey = apiKey.ifBlank { "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" }
+        if (apiKey.isBlank()) {
+            throw IllegalArgumentException("Groq API key is missing. Please set GROQ_API_KEY in .env or local.properties.")
+        }
 
         var lastException: Exception? = null
 
         for (model in candidateModels) {
             try {
-                return executeSingleApiCall(model, effectiveKey, systemPrompt, userPrompt)
+                return executeSingleApiCall(model, apiKey, systemPrompt, userPrompt)
             } catch (e: Exception) {
                 lastException = e
                 System.err.println("Groq API call failed for model $model: ${e.message}")

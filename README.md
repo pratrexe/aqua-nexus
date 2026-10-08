@@ -97,13 +97,13 @@ The project addresses urban water scarcity, groundwater depletion, and urban flo
    ```
    Open `.env` and insert your Groq API key:
    ```env
-   GROQ_API_KEY=gsk_your_actual_groq_api_key_here
+   GROQ_API_KEY=your_groq_api_key_here
    ```
 
    *Option B: Using `local.properties`*
    Add the following line to `local.properties`:
    ```properties
-   GROQ_API_KEY=gsk_your_actual_groq_api_key_here
+   GROQ_API_KEY=your_groq_api_key_here
    ```
 
    > **Note:** `.env` and `local.properties` are listed in `.gitignore` to prevent sensitive credentials from being committed to version control.
