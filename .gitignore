@@ -1,0 +1,18 @@
+# Gradle & Build output
+*.iml
+.gradle
+/build
+/captures
+.externalNativeBuild
+.cxx
+
+# IDE & OS settings
+/.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets & Environment variables
+local.properties
+.env
+.env.local
+!.env.example
